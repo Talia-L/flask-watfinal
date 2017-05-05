@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Welcome to FinalDemo{% endblock %}
 {% block content %}
-        <h1>Hello World.</h1>
-        <p>It's me, Talia. </p>
+<br /><br />
+<div class="jumbotron">
+ <div class="container">
+  <h1>Jumbotron</h1>
+  <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+ </div>
+  </div>
+
+    <h1>A scroll away from true love!</h1>
+    <div class="center">
+    <div class="rpw">
+        {% for x in listings %}
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3><a href="{{ url_for('listing_show', listing_id=x.id) }}">{{ x.name }}</a></h3>
+                    <h5>Age:  {{ x.age }}</h5>
+                    <h5>I'm Attracted to:  {{ x.sexorientation }}</h5>
+                    <h5>Location:  {{ x.location }}</h5>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+<br />
+<br />
+<br />
 {% endblock %}

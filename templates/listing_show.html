@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Welcome to {% endblock %}
+{% block content %}
+    <div id="Show Profile">
+        <h2>Bachelor/Bachelorette #{{ list_id }}</h2>
+        <h3>{{ listing.name }}</h3>
+        <h5>Age:  {{ listing.age }}</h5>
+        <h5>I'm Attracted to:  {{ listing.sexorientation }}</h5>
+        <h5>Location:  {{ listing.location }}</h5>
+        <h5>What I Do for the Dollaz:  {{ listing.occupation }}</h5>
+        <h5>How I Waste Time:  {{ listing.interests }}</h5>
+        <h5>My Belief:  {{ listing.religion }}</h5>
+        <h5>This is What I Want:  {{ listing.lookingfor }}</h5>
+        <h5>Slide in my DM:  {{ listing.email }}</h5>
+        <h5>Or Stalk Me On Social Media Here:  {{ listing.socialmedia }}</h5>
+    </div>
+    <br >
+    <br >
+    <a href="{{ url_for('index') }}">Show All</a><br >
+    <a href="{{ url_for('listing_edit', listing_id=listing.id) }}">Edit Listing</a>
+{% endblock %}
